@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEYVIX • VISUAL DESIGNER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div id="custom-cursor" class="cursor-dot cursor-on-header">
+    
+</div>
+
+<!-- HEADER -->
+<header class="header">
+    <section class="header__container limiter">
+        <div class="logo">
+            <a href="#hero" style="display: flex; flex-direction: row;">
+                <div class="logo-circle">P</div>
+                <span class="logo-name">EYVIX Design</span>
+            </a>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="#about" class="nav-link">Обо мне</a>
+            <a href="#work" class="nav-link">Работы</a>
+            <a href="#process" class="nav-link">Процесс</a>
+            <a href="#contact" class="nav-link">Контакт</a>
+        </nav>
+
+        <div class="header-actions">
+            <button onclick="toggleDarkMode()" class="theme-btn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <a href="#contact" class="cta-btn">
+                <span>Давай работать</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>  
+    </section>
+</header>
+
+<!-- Noise Filter -->
+<svg style="display: none;">
+    <filter id="noiseFilter" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch" />
+    </filter>
+</svg>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero__container limiter">
+        <!-- Left Content -->
+        <div class="hero-content">
+            <div class="status-badge">
+                <div class="status-badge--pulse-dot"></div>
+                Доступен для проектов • 2026
+            </div>
+            
+            <h1 class="hero-title">
+                Я создаю<br>цифровые<br>пространства
+            </h1>
+            
+            <p class="hero-subtitle">
+                Web Design • Graphic Design • Branding<br>
+                Минимализм, характер, уникальность
+            </p>
+            
+            <div class="hero-actions">
+                <a href="#work" class="primary-btn">
+                    Смотреть работы
+                    <span class="arrow">↗</span>
+                </a>
+                
+                <!-- <div onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+                    class="btn-scroll">
+                    ↓
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Right Visual -->
+        <div class="hero-visual">
+            <div class="visual-frame">
+                <img src="../PEYVIXDESIGN/assets/work1.png" 
+                    alt="Hero Cover" 
+                    class="hero-image">
+                
+                <!-- Overlay -->
+                <div class="image-overlay"></div>
+                
+                <!-- Floating Tags -->
+                <div class="floating-tag tag-1">
+                    <span class="tag-1__info-txt">Playboi Carti - Goodnight Daylight <br> <span class="txt">Album Cover</span></span>
+                </div>
+            </div>
+            
+            <!-- Decorative SVG -->
+            <svg class="decorative-svg1" viewBox="0 0 400 400">
+                <circle cx="200" cy="200" r="180" fill="none" stroke="#00ff9f" stroke-width="1"/>
+                <circle cx="200" cy="200" r="130" fill="none" stroke="#00ff9f" stroke-width="1"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<span class="line"></span>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="about__container limiter">
+        <div class="about__grid">
+            <div class="about__left">
+                <span class="accent-label">01 / ОБО МНЕ</span>
+                <h2 class="about__title heading">Дизайн — это<br>не только<br>красота</h2>
+            </div>
+            
+            <div class="about__right">
+                <div class="about__description">
+                    <p>
+                        Привет! Я Роман — независимый цифровой дизайнер из Омска. 
+                        Я создаю эмоциональный визуал, который запоминается и работает.
+                    </p>
+                    <p>
+                        Мой подход сочетает минимализм с неожиданными деталями. 
+                        Я верю, что хороший дизайн должен вызывать эмоции и решать реальные задачи бизнеса.
+                    </p>
+                </div>
+                
+                <div class="about__stats">
+                    <div class="stat-item">
+                        <div class="stat-number">42</div>
+                        <div class="stat-label">Проекта</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">18</div>
+                        <div class="stat-label">Клиентов</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Года</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <svg class="decorative-svg4" viewBox="0 0 400 400">
+            <circle cx="200" cy="200" r="180" fill="none" stroke="#10ba79c0" stroke-width="1"/>
+            <circle cx="200" cy="200" r="130" fill="none" stroke="#00ff9f" stroke-width="1"/>
+        </svg>
+
+        <svg class="decorative-svg5" viewBox="0 0 400 400">
+            <circle cx="200" cy="200" r="150" fill="none" stroke="#11c27ec0" stroke-width="1"/>
+            <circle cx="200" cy="200" r="125" fill="none" stroke="#00ff9f" stroke-width="1"/>
+        </svg>
+    </div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work">
+    <div class="work__container limiter">
+        <div class="work__header">
+            <div class="header_title">
+                <span class="accent-label">02 / РАБОТЫ</span>
+                <h2 class="work__title heading">Избранное</h2>
+            </div>
+            <a href="projects/projects.html" class="all-projects-link group">
+                <p class="projects-btn">Все проекты</p>
+                <span id="arrow" class="arrow-icon">→</span>
+            </a>
+        </div>
+
+        <div class="work__grid">
+            <div class="project-card">
+                <div class="project-card__visual">
+                    <img src="assets/work2.png" alt="NEXUS Dashboard" class="project-card__img">
+                    <div class="project-card__overlay">
+                        <div class="project-card__overlay-content">
+                            <div class="accent-label small">2026 • MUSIC ALBUM COVER</div>
+                            <h3 class="project-card__title heading">Boost It</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card__footer">
+                    <div class="project-card__tags">AI-платформа • 3D-интерфейс</div>
+                    <a href="cases/case.html" class="card-btn">
+                        <span>Смотреть</span>
+                        <span class="card-btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-card__visual">
+                    <img src="assets/work4.png" alt="LUNAR Studio" class="project-card__img">
+                    <div class="project-card__overlay">
+                        <div class="project-card__overlay-content">
+                            <div class="accent-label small">2025 • AVATAR</div>
+                            <h3 class="project-card__title heading">P Letter</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card__footer">
+                    <div class="project-card__tags">Бренд + веб-сайт</div>
+                        <a href="cases/case.html" class="card-btn">
+                            <span>Смотреть</span>
+                            <span class="card-btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                        </a>           
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+    <div class="process__container limiter">
+
+        <div class="process-header">
+            <span class="accent-label">03 / ПРОЦЕСС</span>
+            <h2 class="process__title heading">Как я работаю</h2>
+        </div>
+
+
+        <div class="process__grid">
+            <div class="process__step">
+                <div class="step-number">01</div>
+                <div class="step-name heading">Исследование</div>
+                <p class="step-description">Глубокое погружение в продукт, аудиторию и конкурентов.</p>
+            </div>
+            <div class="process__step">
+                <div class="step-number">02</div>
+                <div class="step-name heading">Концепция</div>
+                <p class="step-description">Создание moodboard, типографики и ключевых визуальных решений.</p>
+            </div>
+            <div class="process__step">
+                <div class="step-number">03</div>
+                <div class="step-name heading">Прототип</div>
+                <p class="step-description">Интерактивные прототипы в Figma + анимации.</p>
+            </div>
+            <div class="process__step">
+                <div class="step-number">04</div>
+                <div class="step-name heading">Доработка</div>
+                <p class="step-description">Тестирование, итерации и финальная полировка.</p>
+            </div>
+        </div>
+
+        <svg class="decorative-svg2" viewBox="0 0 400 400">
+            <circle cx="200" cy="200" r="180" fill="none" stroke="#11b777c9" stroke-width="1"/>
+            <circle cx="200" cy="200" r="130" fill="none" stroke="#00ff9f" stroke-width="1"/>
+        </svg>
+
+        <svg class="decorative-svg3" viewBox="0 0 400 400">
+            <circle cx="200" cy="200" r="175" fill="none" stroke="#0faa6eb8" stroke-width="1"/>
+            <circle cx="200" cy="200" r="130" fill="none" stroke="#00ff9f" stroke-width="1"/>
+        </svg>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="contact__container limiter">
+        <div class="contact__info">
+            <h2 class="heading contact__title">Давай создадим<br>что-то особенное</h2>
+            <p class="contact__text">
+                Ищу интересные проекты в области брендинга, веб-дизайна и цифровых продуктов.
+            </p>
+            
+            <div class="contact__links">
+                <a href="mailto:peyvix.official@gmail.com" class="contact__email">peyvix.design@gmail.com</a>
+                <div class="social-icons">
+                    <a href="https://x.com" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16"><path fill="currentColor" d="m9.237 7.004l4.84-5.505H12.93L8.727 6.28L5.371 1.5H1.5l5.075 7.228L1.5 14.499h1.147l4.437-5.047l3.545 5.047H14.5zM7.666 8.791l-.514-.72L3.06 2.344h1.762l3.302 4.622l.514.72l4.292 6.007h-1.761z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path fill="currentColor" d="M349.33 69.33a93.62 93.62 0 0 1 93.34 93.34v186.66a93.62 93.62 0 0 1-93.34 93.34H162.67a93.62 93.62 0 0 1-93.34-93.34V162.67a93.62 93.62 0 0 1 93.34-93.34zm0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32"/><path fill="currentColor" d="M377.33 162.67a28 28 0 1 1 28-28a27.94 27.94 0 0 1-28 28M256 181.33A74.67 74.67 0 1 1 181.33 256A74.75 74.75 0 0 1 256 181.33m0-37.33a112 112 0 1 0 112 112a112 112 0 0 0-112-112"/></svg>
+                    </a>
+                    <a href="https://www.behance.net" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M7.443 5.35c.639 0 1.23.05 1.77.198c.541.099.984.297 1.377.544q.591.371.885 1.039c.197.445.296.99.296 1.583c0 .693-.148 1.286-.492 1.731c-.295.446-.787.841-1.377 1.138c.836.248 1.475.693 1.869 1.286s.639 1.336.639 2.177c0 .693-.148 1.286-.394 1.781c-.245.495-.639.94-1.082 1.237a5.1 5.1 0 0 1-1.573.692c-.59.149-1.18.248-1.77.248H1V5.35zm-.394 5.54c.541 0 .984-.148 1.328-.395s.492-.693.492-1.237c0-.297-.05-.594-.148-.791s-.246-.347-.442-.495a2.4 2.4 0 0 0-.64-.247c-.246-.05-.491-.05-.787-.05H4v3.216zm.148 5.838c.295 0 .59-.05.836-.099c.246-.05.492-.148.688-.297a1.8 1.8 0 0 0 .492-.544c.098-.247.197-.544.197-.89c0-.693-.197-1.188-.59-1.534c-.394-.297-.935-.445-1.574-.445H4v3.81zm9.492-.05q.59.594 1.77.594c.541 0 1.033-.148 1.426-.395q.591-.446.738-.891h2.41c-.394 1.187-.984 2.028-1.77 2.572c-.788.495-1.722.792-2.853.792a5.8 5.8 0 0 1-2.115-.396a3.9 3.9 0 0 1-1.574-1.088a3.9 3.9 0 0 1-.983-1.633c-.246-.643-.345-1.335-.345-2.127c0-.742.099-1.434.345-2.078a5.3 5.3 0 0 1 1.033-1.682c.442-.445.983-.84 1.573-1.088a5.5 5.5 0 0 1 2.066-.396c.836 0 1.574.149 2.213.495c.64.346 1.131.742 1.524 1.336c.394.544.69 1.187.886 1.88c.098.692.147 1.385.098 2.176H16c0 .792.295 1.534.689 1.93m3.098-5.194c-.344-.346-.885-.544-1.525-.544a2.34 2.34 0 0 0-1.082.247c-.295.149-.491.347-.688.545a1.3 1.3 0 0 0-.344.692c-.05.248-.099.445-.099.643h4.426c-.098-.742-.344-1.236-.688-1.583M15.459 6.29h5.508v1.336H15.46z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <form class="contact-form" id="contact-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">Имя<span class="accent-text-color"> *</span></label>
+                    <input class="form-input" type="text" name="Name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Ваша почта<span class="accent-text-color"> *</span></label>
+                    <input class="form-input" type="text" name="Email">
+                </div>
+                
+                <div class="form-group form-company-wrapper">
+                    <span class="company-placeholder-btn">Компания +</span>
+                    <div class="company-input-block">
+                        <label class="form-label">Компания</label>
+                        <input class="form-input" type="text" name="Company">
+                        <button type="button" class="company-close-btn">×</button>
+                    </div>
+                </div>
+            </div>
+                        
+            <div class="form-group">
+                <label class="form-label">Сообщение</label>
+                <textarea rows="6" class="form-input form-textarea" name="Information"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submit">
+                ОТПРАВИТЬ ЗАЯВКУ
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer__container limiter">
+       <p class="footer__title heading"> © 2026 PEYVIX DESIGN. Все права защищены. </p>
+    </div>
+</footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
