@@ -1,4 +1,4 @@
-// Custom Cursor (плавный)
+// == CUSTOM CURSOR == //
 const cursor = document.getElementById('custom-cursor');
 const navbar = document.querySelector('header');
 let targetX = 0, targetY = 0;
@@ -10,8 +10,7 @@ document.addEventListener('mousemove', (e) => {
     targetY = e.clientY;
 });
 
-// Mouse out page optimisation //
-
+// == MOUSE OUT PAGE OPTIMISATION == //
     // Mouse check - in
 document.addEventListener('mouseleave', () => {
     isCursorVisible = false;
@@ -32,7 +31,7 @@ document.addEventListener('mouseenter', () => {
     cursor.style.transition = 'none'; 
 });
 
-// Cursor
+// == CURSOR == //
 function animateCursor() {
 
     if (isCursorVisible) {
@@ -47,7 +46,7 @@ function animateCursor() {
 }
 animateCursor();
 
-// Remove click class when page loading
+// == REMOVE CLICK CLASS WHEN PAGE IS LOADING == //
 document.addEventListener('DOMContentLoaded', () => {
     const cursor = document.getElementById('custom-cursor');
     
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Cursor click
+// == CURSOR CLICK == //
 document.addEventListener('click', (e) => {
     cursor.classList.add('cursor-on-header');
     setTimeout(() => {
@@ -65,7 +64,7 @@ document.addEventListener('click', (e) => {
    
 })
 
-// // Header cursor glow trail
+// == HEADER CURSOR GLOW TRAIL == //
 // if (navbar) {
 //     navbar.addEventListener('mouseenter', () => {
 //         cursor.style.transition = 'scale 0.4s ease, width 0.4s ease, height 0.4s ease, background-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease';
@@ -98,8 +97,7 @@ document.addEventListener('mouseover', (e) => {
     }
 });
 
-// FORM SUBMIT
-
+// == FORM SUBMIT == //
 const form = document.getElementById('contact-form');
 // form.addEventListener('submit', function(e) {
 //     e.preventDefault();
@@ -109,7 +107,6 @@ const form = document.getElementById('contact-form');
 //     alert('Спасибо! Я свяжусь с вами в ближайшее время ✨');
 //     this.reset();
 // });
-
 const TELEGRAM_TOKEN = '8636551488:AAFrwOlhWson8Sm7PQUD_Uv9pK0aj7-Mn7k';
 const TELEGRAM_CHAT_ID = '1884129591';
 
@@ -119,17 +116,24 @@ form.addEventListener('submit', function(e) {
     const formValues = Object.fromEntries(formData.entries());
     console.log('Собранные данные:', formValues); 
 
+    // Validation
+    const nameValue = formValues.Name ? formValues.Name.trim() : '';
+    const emailValue = formValues.Email ? formValues.Email.trim() : '';
+    if (!nameValue || !emailValue) {
+        alert('Пожалуйста, заполните обязательные поля: Имя и Email. ⚠️');
+        return;
+    }
+
     // TG Bot Message
     let message = `<b>🔔 Новая заявка с сайта!</b>\n\n`;
-    message += `👤 <b>Name:</b> ${formValues.Name || 'Не указано'}\n`;
-    message += `📧 <b>Email:</b> ${formValues.Email || 'Не указано'}\n`;
-    if (formValues.Company) {
-        message += `🏢 <b>Company:</b> ${formValues.Company}\n`;
+    message += `👤 <b>Name:</b> ${nameValue}\n`;
+    message += `📧 <b>Email:</b> ${emailValue}\n`;
+    if (formValues.Company && formValues.Company.trim() !== '') {
+        message += `🏢 <b>Company:</b> ${formValues.Company.trim()}\n`;
     }
     message += `<b>ㅤㅤㅤㅤ</b>\n`;
-    message += `ℹ️ <b>Info:</b> ${formValues.Information || 'Не указано'}\n`;
+    message += `ℹ️ <b>Info:</b> ${formValues.Information && formValues.Information.trim() !== '' ? formValues.Information.trim() : 'Не указано'}\n`;
     
-
     // Request to TG Bot
     fetch(`https://api.telegram.org/bot8636551488:AAFrwOlhWson8Sm7PQUD_Uv9pK0aj7-Mn7k/sendMessage`, {
         method: 'POST',
@@ -142,7 +146,7 @@ form.addEventListener('submit', function(e) {
     })
     .then(response => {
         if (response.ok) {
-            alert('Сообщение успешно отправлено! ✨');
+            alert('Спасибо! Я свяжусь с вами в ближайшее время ✨');
             this.reset();
             document.querySelector('.form-company-wrapper')?.classList.remove('active');
         } else {
@@ -155,21 +159,21 @@ form.addEventListener('submit', function(e) {
     });
 });
 
-// Form Company
+// == FORM COMPANY == //
 const openBtn = document.querySelector('.company-placeholder-btn');
 const closeBtn = document.querySelector('.company-close-btn');
 const wrapper = document.querySelector('.form-company-wrapper');
 const companyInput = document.querySelector('input[name="Company"]');
 openBtn.addEventListener('click', () => {
     wrapper.classList.add('active');
-    setTimeout(() => companyInput.focus(), 100); // Мягкий фокус после анимации
+    setTimeout(() => companyInput.focus(), 100);
 });
 closeBtn.addEventListener('click', () => {
     wrapper.classList.remove('active');
-    companyInput.value = ''; // Очищаем данные для FormData
+    companyInput.value = '';
 });
 
-// Smooth scroll
+// == SMOOTH SCROLL == //
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -178,7 +182,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
 });
 
-// Header optimistaion 
+// == HEADER OPTIMISATION == //
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     document.querySelector('.header').style.backdropFilter = 'none';
     document.querySelector('.header').style.background = '#09090b';
