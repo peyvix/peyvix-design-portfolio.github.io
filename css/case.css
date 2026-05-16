@@ -7,16 +7,12 @@
     --animation: all 0.4s ease;
 }
 
-/* Базовые стили страницы */
-/* .bg-dark { background-color: var(--base); }
-.text-main { color: var(--white); }
-.no-x-scroll { overflow-x: hidden; } */
-
 .limiter {
     max-width: 90vw;
 }
 
-/* ШАПКА (Идентичная projects.css) */
+/* ======== HEADER ======== */
+
 .header {
     position: fixed;
     top: 0;
@@ -68,28 +64,31 @@
     background: rgba(255, 255, 255, 0.08);
 }
 
-/* ГЛАВНЫЙ КОНТЕНТ КЕЙСА */
+/* ======== MAIN CONTAINER ======== */
+
 .case-main {
     display: flex;
     flex-direction: row;
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    position: relative;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 2rem;
+    padding-top: 9rem;
+    padding-bottom: 7rem;
 }
 
 .case-img__container {
     position: relative;
-    margin: 0 auto;
-    padding: 0 2rem;
-    width: 42.5%;
+    width: 44%;
     justify-items: center;
     align-content: center;
+    aspect-ratio: 1 / 1;
 }
 
 .case-info__container {
     position: relative;
-    margin: 0 auto;
+    align-self: center;
     margin-bottom: 1rem;
-    padding: 4rem 2rem 4rem 0rem;
     width: 52.5%;
 }
 
@@ -107,7 +106,6 @@
     filter: brightness(0.9);
 }
 
-/* ИНФОРМАЦИЯ О ПРОЕКТЕ */
 .details-header {
     display: flex;
     justify-content: space-between;
@@ -117,10 +115,12 @@
 }
 
 .heading {
-    font-size: clamp(3rem, 6vw, 5rem);
-    line-height: 0.9;
-    margin: 0;
+    /* font-size: clamp(3rem, 6vw, 5rem); */
+    font-size: 4vw;
     font-weight: 700;
+    line-height: 1.1;
+    width: 50%;
+    margin: 0;
 }
 
 .btn-contact {
@@ -169,6 +169,8 @@
     border-color: #00ff9f;
 }
 
+/* ======== INFORMATION ======== */
+
 .meta-grid {
     display: grid;
     grid-template-columns: 2fr 2fr;
@@ -208,6 +210,11 @@
     font-size: 1.25rem;
 }
 
+.error-link:hover { 
+    transition: var(--animation);
+    color: var(--accent); 
+}
+
 .footer {
     padding: 3rem 0;
     border-top: 1px solid var(--border);
@@ -216,7 +223,8 @@
     color: #52525b;
 }
 
-/* Мобильная адаптация */
+/* ======== OPTIMISATION ======== */
+
 @media (max-width: 768px) {
     .details-header {
         flex-direction: column;

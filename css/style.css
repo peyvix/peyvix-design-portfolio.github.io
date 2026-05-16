@@ -283,14 +283,14 @@ body {
     box-shadow: inset 0px 0px 10px 0px #043729aa;
 }
 .cta-btn:hover i {
-    transform: translateX(3px) rotate(90deg);
+    transform: translateX(3px) rotate(45deg);
 }
 .cta-btn:active i {
-    transform: translateX(3px) translateY(1rem) rotate(90deg);
-    transition: all 0.2s ease;
+    transform: translateX(0.2rem) translateY(0.65rem) rotate(90deg);
+    transition: all 0.1s ease;
 }
 i {
-    transition: all 0.6s ease;
+    transition: var(--animation);
 }
 /* ==== CUSTOM CURSOR ==== */
 
@@ -449,7 +449,7 @@ i {
     border-color: #00ff9f;
 }
 .primary-btn:hover .arrow {
-    transform: rotate(110deg);
+    transform: rotate(90deg);
 }
 .primary-btn:active .arrow {
     transform: translateY(1rem) rotate(135deg);
